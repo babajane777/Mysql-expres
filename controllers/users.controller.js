@@ -4,6 +4,7 @@ const User = require('../models/users.model');
 
 exports.create = function (req, res) {
     var newUser = new User(req.body);
+    console.log(newUser);
     if (req.body.constructor === Object && Object.keys(req.body).length === 0) {
         res.status(400).send({ error: true, message: 'Please provide all required field' });
     }else{
@@ -11,6 +12,7 @@ exports.create = function (req, res) {
             if(err){
                 res.send(err);
             }
+
             res.json({error:false , message: "new user created", data:user});
         })
     }
