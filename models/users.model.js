@@ -1,7 +1,7 @@
 const sqldb = require('../config/dbConfig');
 
 var Users = function(user){
-    this.id = user.id;
+    this.Id = user.Id;
     this.name = user.name;
     this.emailId = user.emailId;
 }
